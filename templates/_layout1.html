@@ -28,6 +28,7 @@ Django Framework
 
 {% block main %}
 <div class="container">
+    {% include 'messages.html' %}
     {% block content %}
     <p>Conteúdo padrão...</p>
     {% endblock content %}
