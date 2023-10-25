@@ -17,6 +17,10 @@
         {% if post.categoria %}
         <span>Categoria: {{ post.categoria }}</span>
         {% endif %}
+        <br>
+        <a href="{% url 'post_edit' pk=post.id %}" class="link-secondary">
+            Editar
+        </a>
         {% endfor %}
     </div>
 </div>
