@@ -3,7 +3,7 @@ from blog.views import (
     index, ola,  post_show, PostDetailView, 
     get_all_posts, get_post, PostCreateView, 
     create_post, PostListView, SobreTemplateView, 
-    PostUpdateView,)
+    PostUpdateView, PostDeleteView,)
 
 urlpatterns = [
     path('index/', index, name='index'),
@@ -18,4 +18,5 @@ urlpatterns = [
     path('posts', PostListView.as_view(), name="posts_all"),
     path('about-us', SobreTemplateView.as_view(), name="about_page"),
     path('post/<int:pk>/edit', PostUpdateView.as_view(), name="post_edit"),
+    path('post/<int:pk>/delete', PostDeleteView.as_view(), name="post_delete"),
 ]
