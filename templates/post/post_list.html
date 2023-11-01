@@ -15,9 +15,15 @@
         <p>{{ post.body_text }}</p>
         </article>
         {% if post.categoria %}
-        <span>Categoria: {{ post.categoria }}</span>
+        <span>Categoria: {{ post.categoria }}</span> <br>
         {% endif %}
-        <br>
+
+            {% if post.autor %}
+                <span>Autor: {{post.autor.username}}</span>
+            {% else %}
+                <span>Autor: Desconhecido</span>
+            {% endif %} <br>
+
         <a href="{% url 'post_edit' pk=post.id %}" class="link-secondary">
             Editar
         </a>
