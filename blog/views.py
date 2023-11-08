@@ -156,12 +156,13 @@ def post_send(request, post_id):
         email = request.POST.get('email')
         if len(email) < 5:
             raise ValueError('E-mail inválido')
+        
         link = f'{request._current_scheme_host}{post_url}'
         template = "post/post_send"
         text_message = render_to_string(f"{template}.txt", {'post_link': link})
         html_message = render_to_string(f"{template}.html", {'post_link': link})
         send_mail(
-            subject="Este assunto pode te interessar !", 
+            subject="Este assunto pode te interessar!", 
             message=text_message, 
             from_email=settings.EMAIL_HOST_USER, 
             recipient_list=[email], 
